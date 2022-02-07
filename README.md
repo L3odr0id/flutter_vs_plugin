@@ -1,6 +1,6 @@
 # flutter-l3odr0id-features README
 
-This is the README for your extension "flutter-l3odr0id-features". After writing up a brief description, we recommend including the following sections.
+README for extension "flutter-l3odr0id-features". After writing up a brief description, we recommend including the following sections.
 
 ## Features
 
@@ -51,6 +51,7 @@ Added features X, Y, and Z.
 ## Following extension guidelines
 
 Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+
 
 * [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
 
