@@ -1,5 +1,7 @@
 # flutter-l3odr0id-features README
 
+## Special thanks to [@laefad](https://github.com/laefad)
+
 README for extension "flutter-l3odr0id-features". After writing up a brief description, we recommend including the following sections.
 
 ## Features
