@@ -7,7 +7,7 @@ export const statusBarIcon = (): vscode.StatusBarItem => {
     const priority: number = 1; 
 
     const item = vscode.window.createStatusBarItem(itemAligment, priority);
-    item.text = `$(three-bars)Shell`;
+    item.text = `$(flame) Flutter features`;
     item.command = showShellCommandMenuId;
 
     return item;

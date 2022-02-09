@@ -1,17 +1,22 @@
 {
 	"name": "flutter-l3odr0id-features",
-	"displayName": "flutter_l3odr0id_features",
-	"description": "Some desc...",
-	"version": "0.0.1",
+	"displayName": "Flutter features",
+	"description": "An instrument with some commands binded",
+	"version": "1.0.0",
 	"engines": {
 		"vscode": "^1.63.0"
 	},
 	"categories": [
 		"Other"
 	],
+	"repository": {
+		"type": "git",
+    	"url": "https://github.com/L3odr0id/flutter_vs_plugin"
+	},
 	"activationEvents": [
 		"*"
 	],
+	"license" : "MIT",
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
