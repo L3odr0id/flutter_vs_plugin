@@ -2,7 +2,7 @@
 	"name": "flutter-l3odr0id-features",
 	"displayName": "Flutter features",
 	"description": "An instrument with some commands binded",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"engines": {
 		"vscode": "^1.63.0"
 	},
@@ -21,38 +21,34 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "flutter-l3odr0id-features.showShellCommandMenu",
+				"command": "flutter-features.showShellCommandMenu",
 				"title": "Show Shell Comand Menu"
+			}, 
+			{
+				"command": "flutter-features.addShellCommandMenu",
+				"title": "Add Shell Command"
 			}
-		]
-	},
-	"configuration": {
-		"title": "Commands extension config",
-		"type": "object",
-		"properties": {
-			"extension.commands": {
-				"type": "array",
-				"items": {
-					"type": "object",
-					"title": "inner objects",
-					"properties": {
-						"name": {
-							"type": "string",
-							"description": "Name of inner object"
-						},
-						"command": {
-							"type": "string",
-							"description": "Shell command"
+		],
+		"configuration": {
+			"title": "Flutter features",
+			"properties": {
+				"flutter-features.commands": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"name": {
+								"type": "string",
+								"description": "Shell alias"
+							},
+							"command": {
+								"type": "string",
+								"description": "Shell command"
+							}
 						}
-					}
-				},
-				"default": [
-					{
-						"name": "sayHello",
-						"command": "echo \"Hello world\""
-					}
-				],
-				"description": "my test configurations"
+					},
+					"description": "Commands"
+				}
 			}
 		}
 	},

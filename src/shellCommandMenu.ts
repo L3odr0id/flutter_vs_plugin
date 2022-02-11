@@ -1,23 +1,30 @@
 import * as vscode from 'vscode';
 import {
     EXTENSION_NAME,
-    Subscriptions
+    COMMANDS_KEY,
+    Subscriptions,
+    Command
 } from "./util";
+
+import {
+    addShellCommandMenuId
+} from "./addComandMenu";
 
 export const showShellCommandMenuId: string = `${EXTENSION_NAME}.showShellCommandMenu`;
 
 export const showShellCommandMenu = async () => {
 
-    interface Option {
-        name: string;
-        command: string;
-    }
+    const ADD_COMMAND_LABEL = "Add new command";
 
-    const options: Array<Option> = vscode.workspace.getConfiguration().get("extension.commands") || [];
-
-    const items = options.map(option => option.name);
+    const options: Array<Command> = vscode.workspace.getConfiguration().get(COMMANDS_KEY) || [];
+    const items = options.map(option => option.name).concat(ADD_COMMAND_LABEL);
 
     const onSelect = (label: string) => {
+        if (label === ADD_COMMAND_LABEL) {
+            vscode.commands.executeCommand(addShellCommandMenuId);
+            return ;
+        }
+
         const option = options.find(option => option.name === label);
 
         if (!option) {
