@@ -1,9 +1,9 @@
 # Change Log
 
-All notable changes to the "flutter-l3odr0id-features" extension will be documented in this file.
-
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
 ## [Unreleased]
 
-- Initial release
+### [1.0.1] - 2022-02-11
+- Custom commands feature
+
+### [1.0.0] - 2022-02-08
+- Execute commands
