@@ -1,18 +1,26 @@
-# flutter-l3odr0id-features README
+# Flutter-l3odr0id-features README
 
 ## Special thanks to [@laefad](https://github.com/laefad)
 
-README for extension "flutter-l3odr0id-features". After writing up a brief description, we recommend including the following sections.
+Plugin with commands for quick work with Flutter utilities.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+The extension adds an action button to the status bar.
+
+![bar](screenshots/statusbar.png)
+
+Clicking the button will open the command picker, where you can select a predefined command or add your own.
+
+![picker](screenshots/picker.png)
+
+<!-- Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
 
 For example if there is an image subfolder under your extension project workspace:
 
-\!\[feature X\]\(images/feature-x.png\)
+\!\[feature X\]\(images/feature-x.png\) -->
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+<!-- > Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow. -->
 
 <!-- ## Extension Settings
 
