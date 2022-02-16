@@ -2,7 +2,7 @@
 	"name": "flutter-l3odr0id-features",
 	"displayName": "Flutter features",
 	"description": "An instrument with some commands binded",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"engines": {
 		"vscode": "^1.63.0"
 	},
@@ -14,7 +14,7 @@
     	"url": "https://github.com/L3odr0id/flutter_vs_plugin"
 	},
 	"activationEvents": [
-		"*"
+		"onStartupFinished"
 	],
 	"license" : "MIT",
 	"main": "./out/extension.js",

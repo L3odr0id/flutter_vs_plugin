@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import { Subscriptions } from "./util";
-import { showShellCommandMenuId } from "./shellCommandMenu";
+import { showShellCommandMenuId } from "./commands/shellCommandMenu";
 
 export const statusBarIcon = (): vscode.StatusBarItem => {
     const itemAligment: vscode.StatusBarAlignment = vscode.StatusBarAlignment.Left;
@@ -16,7 +16,5 @@ export const statusBarIcon = (): vscode.StatusBarItem => {
 export const initStatusBarIcon = (subscriptions: Subscriptions) => {
     const icon = statusBarIcon();
     subscriptions.push(icon);
-
-    console.log(icon);
     icon.show();
 };
