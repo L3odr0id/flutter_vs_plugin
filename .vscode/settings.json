@@ -20,6 +20,18 @@
         {
             "name": "Pub get",
             "command": "fvm flutter pub get"
+        },
+        {
+            "name": "Build bundle .aab",
+            "command": "fvm flutter build bundle"
+        },
+        {
+            "name": "Build apk",
+            "command": "fvm flutter build apk"
+        },
+        {
+            "name": "Pub get",
+            "command": "fvm fflutter build web --release --web-renderer html"
         }
     ]
 }
