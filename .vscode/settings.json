@@ -30,8 +30,8 @@
             "command": "fvm flutter build apk"
         },
         {
-            "name": "Pub get",
-            "command": "fvm fflutter build web --release --web-renderer html"
+            "name": "Build web",
+            "command": "fvm flutter build web --release --web-renderer html"
         }
     ]
 }
