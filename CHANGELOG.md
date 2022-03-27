@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+### [1.1.0] - 2022-03-28
+- Building with webpack 
+
 ### [1.0.2] - 2022-02-16
 - Fix options scope
 
