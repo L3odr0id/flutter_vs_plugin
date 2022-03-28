@@ -1,39 +1,10 @@
 import * as vscode from 'vscode';
 import { Command, Subscriptions } from '@/types';
-import { EXTENSION_NAME, COMMANDS_KEY } from '@/constants';
-import { initCommand } from "@/util";
+import { EXTENSION_NAME } from '@/constants';
+import { initCommand, getMergedConfiguration } from "@/util";
 import { addShellCommandMenuId } from "@/commands/addComandMenu";
 
 export const showShellCommandMenuId: string = `${EXTENSION_NAME}.showShellCommandMenu`;
-
-const getMergedConfiguration = (): Array<Command> => {
-    let result: Array<Command> = [];
-    const config = vscode.workspace.getConfiguration().inspect<Array<Command>>(COMMANDS_KEY);
-
-    if (config === undefined) {
-        return [];
-    }
-
-    if (config.globalValue !== undefined) {
-        result = result.concat(config.globalValue ?? []);
-    }
-
-    if (config.workspaceValue !== undefined) {
-        const temp = config.workspaceValue ?? [];
-        result = result.filter(
-            a => temp.every(b => b.name !== a.name)
-        ).concat(temp);
-    }
-
-    if (config.workspaceFolderValue !== undefined) {
-        const temp = config.workspaceFolderValue ?? [];
-        result.filter(
-            a => temp.every(b => b.name !== a.name)
-        ).concat(temp);
-    }
-
-    return result;
-};
 
 export const showShellCommandMenu = async () => {
 

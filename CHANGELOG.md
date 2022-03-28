@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+### [1.1.1] - 2022-03-28
+- Fix a bug in the configuration merge
+
 ### [1.1.0] - 2022-03-28
 - Building with webpack 
 

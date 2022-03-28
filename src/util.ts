@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
-import { Subscriptions } from '@/types';
+import { Command, Subscriptions } from '@/types';
+import { COMMANDS_KEY } from '@/constants';
 
 export const initCommand = (
     subscriptions: Subscriptions, 
@@ -27,4 +28,31 @@ export const getConfigurationInScope = <T> (
         default:
             return defaultValue;
     }
+};
+
+export const getMergedConfiguration = (): Array<Command> => {
+    let result: Array<Command> = [];
+    const config = vscode.workspace.getConfiguration().inspect<Array<Command>>(COMMANDS_KEY);
+
+    if (config === undefined) {
+        return [];
+    }
+
+    result = result.concat(config?.globalValue ?? []);
+
+    if (config.workspaceValue !== undefined) {
+        const temp = config.workspaceValue;
+        result = result.filter(
+            a => temp.every(b => b.name !== a.name)
+        ).concat(temp);
+    }
+
+    if (config.workspaceFolderValue !== undefined) {
+        const temp = config.workspaceFolderValue;
+        result = result.filter(
+            a => temp.every(b => b.name !== a.name)
+        ).concat(temp);
+    }
+
+    return result;
 };

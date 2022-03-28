@@ -2,7 +2,7 @@
 	"name": "flutter-l3odr0id-features",
 	"displayName": "Flutter features",
 	"description": "An instrument with some commands binded",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"engines": {
 		"vscode": "^1.63.0"
 	},
