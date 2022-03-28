@@ -1,47 +1,10 @@
-import { access } from 'fs';
 import * as vscode from 'vscode';
-import {
-    EXTENSION_NAME,
-    COMMANDS_KEY,
-    Subscriptions,
-    Command,
-    initCommand
-} from "../util";
-
-import {
-    addShellCommandMenuId
-} from "./addComandMenu";
+import { Command, Subscriptions } from '@/types';
+import { EXTENSION_NAME } from '@/constants';
+import { initCommand, getMergedConfiguration } from "@/util";
+import { addShellCommandMenuId } from "@/commands/addComandMenu";
 
 export const showShellCommandMenuId: string = `${EXTENSION_NAME}.showShellCommandMenu`;
-
-const getMergedConfiguration = (): Array<Command> => {
-    let result: Array<Command> = [];
-    const config = vscode.workspace.getConfiguration().inspect<Array<Command>>(COMMANDS_KEY);
-
-    if (config === undefined) {
-        return [];
-    }
-
-    if (config.globalValue !== undefined) {
-        result = result.concat(config.globalValue || []);
-    }
-
-    if (config.workspaceValue !== undefined) {
-        const temp = (config.workspaceValue || []);
-        result = result.filter(
-            a => temp.every(b => b.name !== a.name)
-        ).concat(temp);
-    }
-
-    if (config.workspaceFolderValue !== undefined) {
-        const temp = (config.workspaceFolderValue || []);
-        result.filter(
-            a => temp.every(b => b.name !== a.name)
-        ).concat(temp);
-    }
-
-    return result;
-};
 
 export const showShellCommandMenu = async () => {
 
@@ -53,7 +16,7 @@ export const showShellCommandMenu = async () => {
     const selectedCommand: string = await vscode.window.showQuickPick(items, {
         title: "Select command",
         placeHolder: "Select command",
-    }) || "";
+    }) ?? "";
 
     if (selectedCommand === ADD_COMMAND_LABEL) {
         vscode.commands.executeCommand(addShellCommandMenuId);
@@ -69,8 +32,8 @@ export const showShellCommandMenu = async () => {
     const command: string = option.command;
 
     const terminal = vscode.window.activeTerminal 
-        || vscode.window.terminals.find(t => t.name === EXTENSION_NAME)
-        || vscode.window.createTerminal(EXTENSION_NAME);
+        ?? vscode.window.terminals.find(t => t.name === EXTENSION_NAME)
+        ?? vscode.window.createTerminal(EXTENSION_NAME);
     
     // TODO make optional by settings
     terminal.show(); 

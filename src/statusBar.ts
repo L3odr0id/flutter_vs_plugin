@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
-import { Subscriptions } from "./util";
-import { showShellCommandMenuId } from "./commands/shellCommandMenu";
+import { Subscriptions } from "@/types";
+import { showShellCommandMenuId } from "@/commands/shellCommandMenu";
 
 export const statusBarIcon = (): vscode.StatusBarItem => {
     const itemAligment: vscode.StatusBarAlignment = vscode.StatusBarAlignment.Left;
