@@ -2,7 +2,7 @@
 	"name": "flutter-l3odr0id-features",
 	"displayName": "Flutter features",
 	"description": "An instrument with some commands binded",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"engines": {
 		"vscode": "^1.63.0"
 	},
@@ -47,7 +47,41 @@
 							}
 						}
 					},
-					"description": "Commands"
+					"description": "Commands",
+					"default": [
+						{
+							"name": "Flutter build_runner build",
+							"command": "fvm flutter packages pub run build_runner build --delete-conflicting-outputs"
+						},
+						{
+							"name": "Dart build_runner build",
+							"command": "dart pub run build_runner build --delete-conflicting-outputs"
+						},
+						{
+							"name": "Generate assets with assets_fill (run asset_fill)",
+							"command": "fvm flutter pub run asset_fill"
+						},
+						{
+							"name": "Pub get",
+							"command": "fvm flutter pub get"
+						},
+						{
+							"name": "Build bundle .aab",
+							"command": "fvm flutter build bundle"
+						},
+						{
+							"name": "Build apk",
+							"command": "fvm flutter build apk"
+						},
+						{
+							"name": "Build web",
+							"command": "fvm flutter build web --release --web-renderer html"
+						},
+						{
+							"name": "Run web",
+							"command": "fvm flutter run -d chrome --web-renderer html"
+						}
+					]
 				}
 			}
 		}

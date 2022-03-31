@@ -3,10 +3,10 @@ import * as webpack from 'webpack';
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
 
 const config: webpack.Configuration = {
-  target: 'webworker', // vscode extensions run in webworker context for VS Code web 📖 -> https://webpack.js.org/configuration/target/#target
+  // VSCode extensions run in webworker context for VS Code web
+  target: 'webworker',
   entry: './src/extension.ts',
   output: {
-    // the bundle is stored in the 'dist' folder (check package.json), 📖 -> https://webpack.js.org/configuration/output/
     path: path.resolve(__dirname, 'dist'),
     filename: 'extension.js',
     libraryTarget: 'commonjs2',
@@ -14,16 +14,12 @@ const config: webpack.Configuration = {
   },
   devtool: 'source-map',
   externals: {
-    vscode: 'commonjs vscode' // the vscode-module is created on-the-fly and must be excluded. Add other modules that cannot be webpack'ed, 📖 -> https://webpack.js.org/configuration/externals/
+    // The vscode-module is created on-the-fly and must be excluded.
+    vscode: 'commonjs vscode'
   },
   resolve: {
     mainFields: ['main'],
     extensions: ['.ts'],
-    fallback: {
-      // Webpack 5 no longer polyfills Node.js core modules automatically.
-      // see https://webpack.js.org/configuration/resolve/#resolvefallback
-      // for the list of Node.js core module polyfills.
-    },
     plugins: [
       // Plugin for using aliases from tsconfig paths
       new TsconfigPathsPlugin()

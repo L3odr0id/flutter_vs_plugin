@@ -38,7 +38,14 @@ export const getMergedConfiguration = (): Array<Command> => {
         return [];
     }
 
-    result = result.concat(config?.globalValue ?? []);
+    result = result.concat(config?.defaultValue ?? []);
+
+    if (config.globalValue !== undefined) {
+        const temp = config.globalValue;
+        result = result.filter(
+            a => temp.every(b => b.name !== a.name)
+        ).concat(temp);
+    }
 
     if (config.workspaceValue !== undefined) {
         const temp = config.workspaceValue;
