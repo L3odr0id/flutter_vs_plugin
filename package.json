@@ -63,6 +63,10 @@
 							"command": "fvm flutter pub run asset_fill"
 						},
 						{
+							"name": "Run intl_utils:generate",
+							"command": "fvm flutter pub run intl_utils:generate"
+						},
+						{
 							"name": "Pub get",
 							"command": "fvm flutter pub get"
 						},
