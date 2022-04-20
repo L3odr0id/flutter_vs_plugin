@@ -85,6 +85,10 @@
 						{
 							"name": "Run web --web-renderer html",
 							"command": "fvm flutter run -d chrome --web-renderer html"
+						},
+						{
+							"name": "Run dart_code_metrics analyze lib",
+							"command": "fvm flutter pub run dart_code_metrics:metrics analyze lib   "
 						}
 					]
 				}
