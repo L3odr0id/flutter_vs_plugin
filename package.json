@@ -88,7 +88,11 @@
 						},
 						{
 							"name": "Run dart_code_metrics analyze lib",
-							"command": "fvm flutter pub run dart_code_metrics:metrics analyze lib   "
+							"command": "fvm flutter pub run dart_code_metrics:metrics analyze lib"
+						},
+						{
+							"name": "Run flutter_launcher_icons:main",
+							"command": "fvm flutter pub run flutter_launcher_icons:main"
 						}
 					]
 				}
