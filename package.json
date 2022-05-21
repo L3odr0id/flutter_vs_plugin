@@ -93,6 +93,10 @@
 						{
 							"name": "Run flutter_launcher_icons:main",
 							"command": "fvm flutter pub run flutter_launcher_icons:main"
+						},
+						{
+							"name": "Run ffigen",
+							"command": "fvm flutter pub run ffigen"
 						}
 					]
 				}
