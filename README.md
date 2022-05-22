@@ -1,6 +1,6 @@
-# Flutter-l3odr0id-features README
+# Flutter-l3odr0id-commands README
 
-## Special thanks to [@laefad](https://github.com/laefad)
+# Special thanks to [@laefad](https://github.com/laefad)
 
 Plugin with commands for quick work with Flutter utilities.
 
