@@ -3,6 +3,7 @@
 	"displayName": "Flutter commands",
 	"description": "An instrument with some commands binded",
 	"version": "2.0.0",
+	"publisher": "Leodroid",
 	"icon": "images/icon.png",
 	"engines": {
 		"vscode": "^1.63.0"
