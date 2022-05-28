@@ -2,7 +2,7 @@
 	"name": "flutter-l3odr0id-features",
 	"displayName": "Flutter commands",
 	"description": "An instrument with some commands binded",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"publisher": "Leodroid",
 	"icon": "images/icon.png",
 	"engines": {

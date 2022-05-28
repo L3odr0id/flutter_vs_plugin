@@ -8,11 +8,11 @@ Plugin with commands for quick work with Flutter utilities.
 
 The extension adds an action button to the status bar.
 
-![bar](screenshots/statusbar.png)
+![bar](screenshots/statusbar2.png)
 
 Clicking the button will open the command picker, where you can select a predefined command or add your own.
 
-![picker](screenshots/picker.png)
+![picker](screenshots/commands2.png)
 
 <!-- Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
 
